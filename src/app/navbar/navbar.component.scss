@@ -1,0 +1,37 @@
+@import '../color.scss';
+
+.nav-custom{
+    background-color: $navColor;
+    height: 10vh;
+    .navbar-brand{
+        color: $headColor;
+        display: flex;
+        .logo{
+            font-weight: 900;
+            span{
+                font-weight: 400;
+            }
+        }
+        .material-icons{
+            color: $bottomBorder;
+        }
+    }
+    .nav-item .nav-link{
+        color: $navgation;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 500ms;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .nav-item:hover .nav-link{
+        color: $headColor;
+    }
+    .now{
+        border-bottom: solid 2px $bottomBorder;
+    }
+}

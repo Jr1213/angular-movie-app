@@ -1,0 +1,51 @@
+<section class="movie-details mt-5">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="vote">{{movieDetails.vote_average}}</div>
+      <img [src]="imgPath+movieDetails.poster_path" alt="movieDetails.original_title+image">
+    </div>
+    <div class="col-md-7">
+      <h2>{{movieDetails.original_title}}</h2>
+      <div class="subInfo">
+        <span class="material-icons">more</span>
+        <span class="category">{{movieDetails.genres[0].name}}</span>
+        <span class="category">{{movieDetails.genres[1].name}}</span>
+        <span class="category">{{movieDetails.genres[2].name}}</span>
+        <span class="material-icons">schedule</span>
+        <span>{{movieDetails.release_date}}</span>
+      </div>
+      <div class="data">
+        <p>{{movieDetails.overview}}</p>
+        <h4>Duration: {{movieDetails.runtime}} min</h4>
+        <h4>Director: {{movieDetails.production_companies[0].name}}</h4>
+      </div>
+    </div>
+    
+  </div>
+
+   <!-- line between two sections -->
+
+   <div class="line">
+    <div class="in-line"></div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <h4>Similar Movies To {{movieDetails.original_title}}</h4>
+      </div>
+
+      <div class="col-md-4 my-3" *ngFor="let movie of simlierMovie">
+        <div class="card-item text-center">
+          <h2>{{movie.title}}</h2>
+          <div class="content">
+            <img [src]="imgPath+movie.poster_path" alt="movie.title+image">
+            <span>{{movie.vote_average}}</span>
+          </div>
+          <div class="nav-btn">
+            <a [routerLink]='["/movieDte", movie.id]' class="btn btn-mine" target="_parent">Watch Now</a>
+          </div>
+        </div>
+      </div>
+  </div>
+   
+</section>

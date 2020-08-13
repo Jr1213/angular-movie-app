@@ -1,0 +1,55 @@
+<section class="tv-details mt-5">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="vote">{{tvDetails.vote_average}}</div>
+        <img [src]="imgPath+tvDetails.poster_path" alt="tvDetails.name+image">
+      </div>
+      <div class="col-md-7">
+        <h2>{{tvDetails.name}}</h2>
+        <div class="subInfo">
+          <span class="material-icons">more</span>
+          <span class="category">{{tvDetails.genres[0].name}}</span>
+          <span class="category">{{tvDetails.genres[1].name}}</span>
+          <span class="material-icons">schedule</span>
+          <span>{{tvDetails.first_air_date}}</span>
+        </div>
+        <div class="data">
+          <p>{{tvDetails.overview}}</p>
+          <h4>Duration: {{tvDetails.episode_run_time}} min</h4>
+          <h4>Cereator: {{tvDetails.created_by[0].name}}</h4>
+          <h4>Network: {{tvDetails.networks[0].name}}</h4>
+          <h4>Number Of Episodes: {{tvDetails.number_of_episodes}}</h4>
+          <h4>Number Of Seasons: {{tvDetails.number_of_seasons}}</h4>
+          <h4>Status: {{tvDetails.status}}</h4>
+        </div>
+      </div>
+      
+    </div>
+  
+     <!-- line between two sections -->
+  
+     <div class="line">
+      <div class="in-line"></div>
+    </div>
+  
+    <div class="row">
+        <div class="col-md-12">
+          <h4>Similar Tv Shows To {{simlierTv.name}}</h4>
+        </div>
+  
+        <div class="col-md-4 my-3" *ngFor="let tv of simlierTv">
+          <div class="card-item text-center">
+            <h2>{{tv.name}}</h2>
+            <div class="content">
+              <img [src]="imgPath+tv.poster_path" alt="tv.name+image">
+              <span>{{tv.vote_average}}</span>
+            </div>
+            <div class="nav-btn">
+              <a [routerLink]='["/tvDet", tv.id]' class="btn btn-mine" target="_parent">Watch Now</a>
+            </div>
+          </div>
+        </div>
+    </div>
+     
+  </section>
+  

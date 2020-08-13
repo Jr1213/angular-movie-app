@@ -1,0 +1,83 @@
+@import '../color.scss';
+
+.trending {
+  .row .col-md-4:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    h4 {
+      color: $navgation;
+      font-size: 1.6;
+    }
+
+  }
+
+  .row {
+    .col-md-4 {
+      .card-item {
+        background-color: #172c3a;
+        border-radius: 10px;
+        height: 60vh;
+        overflow: hidden;
+      }
+
+      h2 {
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .content {
+        height: 50%;
+        position: relative;
+
+        img {
+          height: 100%;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        span {
+          position: absolute;
+          top: -3%;
+          left: 13%;
+          padding: 10px 15px;
+          font-size: 1.2rem;
+          font-weight: 400;
+          background-color: $bottomBorder;
+        }
+      }
+
+      .nav-btn {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn-mine {
+          color: $headColor;
+          background-color: $bgColor;
+          border-radius: 50px;
+          padding: 5px 15px;
+          font-weight: bold;
+          font-size: 1.3rem;
+          transition: all 500ms;
+        }
+
+        .btn-mine:hover {
+          border: solid 2px $bottomBorder;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

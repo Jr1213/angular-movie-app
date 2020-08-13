@@ -1,0 +1,20 @@
+<section class="movies mt-5">
+  <div class="row">
+      <div class="col-md-12 mb-5">
+        <h3>Trending Movies This Week</h3>
+        <h4>Watch Now On Movies Review</h4>
+      </div>
+      <div class="col-md-4 my-3" *ngFor="let movie of moviesDetails">
+        <div class="card-item text-center">
+          <h2>{{movie.original_title}}</h2>
+          <div class="content">
+            <img [src]="imgPath+movie.backdrop_path" alt="movie.title+image">
+            <span>{{movie.vote_average}}</span>
+          </div>
+          <div class="nav-btn">
+            <a [routerLink]='["/movieDte", movie.id]' class="btn btn-mine">Watch Now</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+@import "app/color.scss";
+
+html {
+  background-color: $bgColor;
+
+  body {
+    font-family: 'Catamaran', sans-serif;
+    background-color: $bgColor;
+    color: $headColor;
+
+    .line {
+      width: 100%;
+      height: 10px;
+      border-radius: 50px;
+      background-color: $headColor;
+      margin: 2rem 0;
+
+      .in-line {
+        width: 25%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: $bottomBorder;
+        border-radius: 50px;
+        transition: all 500ms;
+      }
+    }
+
+    .line:hover .in-line {
+      width: 75%;
+    }
+  }
+}
+    

@@ -1,0 +1,46 @@
+<section class="trending mt-5">
+  <!-- displaying the trending movies -->
+  <div class="row">
+    <div class="col-md-4 mb-3 text-center">
+      <h3>Trending Movies This Week</h3>
+      <h4>Watch Now On Movies Review</h4>
+    </div>
+    <div class="col-md-4 my-3" *ngFor="let movie of terndingMovies">
+      <div class="card-item text-center">
+        <h2>{{movie.title}}</h2>
+        <div class="content">
+          <img [src]="imgPath+movie.backdrop_path" alt="movie.title+image">
+          <span>{{movie.vote_average}}</span>
+        </div>
+        <div class="nav-btn">
+          <a [routerLink]='["/movieDte", movie.id]' class="btn btn-mine">Watch Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- line between two sections -->
+
+  <div class="line">
+    <div class="in-line"></div>
+  </div>
+
+   <!-- displaying the trending tv show -->
+   <div class="row">
+    <div class="col-md-4 mb-3 text-center">
+      <h3>Trending Tv Shows This Week</h3>
+      <h4>Watch Now On Movies Review</h4>
+    </div>
+    <div class="col-md-4 my-3" *ngFor="let tv of terndingTv">
+      <div class="card-item text-center">
+        <h2>{{tv.name}}</h2>
+        <div class="content">
+          <img [src]="imgPath+tv.backdrop_path" alt="tv.name+image">
+          <span>{{tv.vote_average}}</span>
+        </div>
+        <div class="nav-btn">
+          <a [routerLink]='["/tvDet", tv.id]' class="btn btn-mine">Watch Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
